@@ -98,38 +98,20 @@ Unified **Grafana dashboards** provide:
 ---
 
 # 🏗️ System Architecture
-┌─────────────────┐ ┌──────────────────┐ ┌─────────────────┐
-│ Node.js API │───▶│ OpenTelemetry │───▶│ Grafana │
-│ Application │ │ Collector │ │ (Dashboard) │
-└─────────────────┘ └──────────────────┘ └─────────────────┘
-│
-▼
-┌──────────────────┐
-│ Observability │
-│ Stack │
-├──────────────────┤
-│ • Loki (Logs) │
-│ • Tempo (Traces) │
-│ • Mimir (Metrics)│
-└──────────────────┘
-│
-▼
-┌──────────────────┐
-│ AI/ML Engine │
-├──────────────────┤
-│ • Prophet │
-│ • Isolation │
-│ Forest │
-└──────────────────┘
-│
-▼
-┌──────────────────┐
-│ Alert System │
-├──────────────────┤
-│ • Phone Calls │
-│ • RCA Reports │
-│ • Automation │
-└──────────────────┘
+
+| Layer | Component | Description |
+|------|-----------|-------------|
+| **Application Layer** | Node.js API Application | Generates API requests and telemetry data |
+| **Telemetry Collection** | OpenTelemetry Collector | Collects, processes, and exports logs, metrics, and traces |
+| **Visualization** | Grafana Dashboard | Displays system metrics, alerts, and performance dashboards |
+| **Observability Stack** | Loki | Centralized log aggregation and querying |
+|  | Tempo | Distributed tracing for microservices |
+|  | Mimir | Long-term metrics storage and monitoring |
+| **AI/ML Engine** | Prophet | Time-series forecasting for predictive analytics |
+|  | Isolation Forest | Machine learning model for anomaly detection |
+| **Alerting & Automation** | Phone Alerts | Automated phone call alerts for incidents |
+|  | RCA Reports | AI-generated Root Cause Analysis reports |
+|  | Automation Workflows | Automated remediation and recovery actions |
 
 
 ---
